@@ -1,18 +1,5 @@
-// Sayısal Loto oyunu: 
-            //  1. Adım: Program kullanıcıdan 6 adet sayı girmesini
-            //  isteyecek ve bu sayılar bir dizide tutulacak,
+            // Lottery Game: 
 
-            //  2. Adım: 6 elemanlı, 1-49 arası rastgele sayılardan
-            //  oluşturulmuş bir dizi oluşturacak. 
-
-            //  3. Adım: Loto sayılarının olduğu dizi ve kullanıcı
-            //  tahminlerinin olduğu dizi karşılaştırılarak eşleşen sayı adedi bulunacak.
-
-            //  4. Adım: Oyuncu 3’ün altında bilmişse program “Kazanamadınız.”
-            //  mesajı verecek. Diğer durumlarda “Tebrikler X adet sayı bildiniz”
-            //  mesajı verecek. 
-
-            //  5. Adım: Oyuncunun bildiği sayılar ekrana yazdırılacak.
 
 
             Console.WriteLine("6 adet sayı giriniz.");
