@@ -1,0 +1,80 @@
+// Sayısal Loto oyunu: 
+            //  1. Adım: Program kullanıcıdan 6 adet sayı girmesini
+            //  isteyecek ve bu sayılar bir dizide tutulacak,
+
+            //  2. Adım: 6 elemanlı, 1-49 arası rastgele sayılardan
+            //  oluşturulmuş bir dizi oluşturacak. 
+
+            //  3. Adım: Loto sayılarının olduğu dizi ve kullanıcı
+            //  tahminlerinin olduğu dizi karşılaştırılarak eşleşen sayı adedi bulunacak.
+
+            //  4. Adım: Oyuncu 3’ün altında bilmişse program “Kazanamadınız.”
+            //  mesajı verecek. Diğer durumlarda “Tebrikler X adet sayı bildiniz”
+            //  mesajı verecek. 
+
+            //  5. Adım: Oyuncunun bildiği sayılar ekrana yazdırılacak.
+
+
+            Console.WriteLine("6 adet sayı giriniz.");
+
+            int[] tahminler = new int[6];
+
+            for (int i = 0; i < tahminler.Length ; i++)
+            {
+                Console.Write((i+1) + ". sayıyı girin: ");
+                tahminler[i] = int.Parse(Console.ReadLine());
+            }
+
+            Random rnd = new Random();
+
+            int[] loto = new int[6];
+
+            for (int i = 0; i < loto.Length ; i++)
+            {
+                loto[i] = rnd.Next(50);
+            }
+
+            int sayac = 0;
+
+            int[] bilinenler = new int[6];
+
+            for (int i = 0; i < tahminler.Length; i++)
+            {
+                for (int t = 0; t < loto.Length; t++)
+                {
+                    if (tahminler[i] == loto[t])
+                    {
+                        sayac++;
+                        bilinenler[i] = loto[t];
+                    }
+                }
+            }
+
+            Console.WriteLine();
+
+            if (sayac < 3 )
+            {
+                Console.WriteLine("Kazanamadınız.");
+            }
+            else
+            {
+                Console.WriteLine("tebrikler " + sayac + " adet sayı bildiniz.");
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < bilinenler.Length; i++)
+            {
+                if (bilinenler[i] != 0)
+                {
+                    Console.Write(bilinenler[i] + " ");
+                }
+                
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < loto.Length; i++)
+            {
+                Console.Write(loto[i] + " ");
+            }
